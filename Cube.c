@@ -120,8 +120,8 @@ void lineTo(int x0,int y0, int x1, int y1) {
   const int dy = y1-y0;
   const int absdx = abs(dx);
   const int absdy = abs(dy);
-  output[x0][y0]='@';
-  output[x1][y1]='@';
+  output[x0][y0]='.';
+  output[x1][y1]='.';
 
   int x = x0;
   int y = y0;
@@ -242,11 +242,6 @@ printf("\x1b[2J");
    draw(mouseX,mouseY);
    mouseX++;
    mouseY++;
-   if(mouseX > 90 || mouseY > 90){
-     mouseX=0;
-     mouseY=0;
-   }
-  printf("\e[1;1H\e[2J");
   usleep(100000);
    
    for(int i=0;i<WIDTH;i++){
